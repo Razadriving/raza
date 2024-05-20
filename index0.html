@@ -24,75 +24,71 @@
     <style>
       /* Static background */
       body {
-        background-image: url(ny\ dark\ bg.jpg);
+        /*background-image: url(image/background-gradient-lights.jpg);*/
+        background-color: #fdd6c0;
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
-        margin: 0;
-        padding: 20px;
-      }
+        margin: 100px;
+        padding: 1px; }
 
       /* Floating containers */
       .floating-container {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        background-color: rgba(48, 45, 45, 0.9);
+        background-color: #fdd6c0;
         border-radius: 8px;
         padding: 20px;
         margin: 20px 0;
       }
-
-      /* Navbar Brand Style */
-      .navbar-brand {
-        color: orange;
-        font-weight: bold;
-      }
-
-      .navbar-brand span {
-        font-size: 1.5rem;
-      }
-
-      .navbar-brand span:nth-of-type(1) {
-        color: green;
-      }
-
-      .navbar-brand span:nth-of-type(2) {
-        color: orange;
-      }
-
-      .navbar-brand span:nth-of-type(3) {
-        color: blue;
-      }
-
-      .navbar-brand span:nth-of-type(4) {
-        color: red;
-      }
-      .carousel img {
-        object-fit: cover;
-        height: 500px;
-        object-fit: cover;
-      }
       .nav-link-label {
-        color: orange;
+        color: darkslategray;
         font-size: x-large;
-        font-weight: bold;
+        /*font-weight: bold;*/
         background-color: black;
         padding: 5px 15px;
         border-radius: 5px;
       }
+      .container {
+        display: flex;
+        justify-content: space-between; /* Aligns two sides apart */
+        flex-wrap: wrap; /* Allows wrapping of items */
+    }
+    .side {
+        width: 48%; /* Each side takes almost half of the container width */
+    }
+    .card {
+        max-width: 540px;
+        margin-bottom: 20px; /* Adds space between cards */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow to cards */
+        display: flex;
+        flex-direction: row; /* Aligns the image and content side by side */
+        background-color: #fff; /* Background color of the card */
+    }
+    .card img {
+        width: 100%; /* Image takes 40% of the card */
+        height: auto;
+        object-fit: cover; /* Ensures the image covers the area well */
+    }
     </style>
   </head>
 
-  <body>
-    <!-- Container Wrapper to provide extra margin -->
-    <div class="container">
+  <body style="min-width: 700px">
+    <div class="container-fluid text-center">
       <!-- Navigation Bar -->
       <nav
-        class="navbar navbar-expand-lg navbar-light bg-light rounded floating-container"
+        class="navbar navbar-expand-lg rounded floating-container fixed-top"
+        style="padding-top: 0; margin-top: 0; border-bottom: 2px solid;"
       >
         <div class="container-fluid">
           <a href="#" class="navbar-brand" aria-label="Raza Driving School">
-            <img src="media/Logo-raza.png" alt="logo" width="150" height="50" />
+            <img
+              src="media/Logo-raza.png"
+              alt="logo"
+              width="150"
+              height="50"
+              class="img-fluid"
+            />
           </a>
 
           <button
@@ -108,30 +104,54 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-auto" style="font-weight: bold">
+            <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a
-                  href="#ourpackages"
-                  class="nav-link"
-                  style="color: orange; font-size: x-large"
-                  >Our Packages</a
+                <button
+                  class="nav-link btn btn-light"
+                  style="
+                    color: black;
+                    font-size: x-large;
+                    padding-right: 24px;
+                  "
                 >
+                  <a
+                    href="#ourpackages"
+                    style="color: inherit; text-decoration: none"
+                    >Our Packages</a
+                  >
+                </button>
               </li>
               <li class="nav-item">
-                <a
-                  href="#features"
-                  class="nav-link"
-                  style="color: orange; font-size: x-large"
-                  >Features</a
+                <button
+                  class="nav-link btn btn-light"
+                  style="
+                    color: black;
+                    font-size: x-large;
+                    padding-right: 24px;
+                  "
                 >
+                  <a
+                    href="#features"
+                    style="color: inherit; text-decoration: none"
+                    >Features</a
+                  >
+                </button>
               </li>
               <li class="nav-item">
-                <a
-                  href="#contactus"
-                  class="nav-link"
-                  style="color: orange; font-size: x-large"
-                  >Contact Us</a
+                <button
+                  class="nav-link btn btn-light"
+                  style="
+                    color: black;
+                    font-size: x-large;
+                    padding-right: 24px;
+                  "
                 >
+                  <a
+                    href="#contactus"
+                    style="color: inherit; text-decoration: none"
+                    >Contact Us</a
+                  >
+                </button>
               </li>
             </ul>
           </div>
@@ -139,55 +159,162 @@
       </nav>
 
       <!-- Main Section -->
-      <section class="p-5 text-start floating-container">
-        <div class="container">
-          <div
-            id="carouselExampleFade"
-            class="carousel slide carousel-fade"
-            data-bs-ride="carousel"
-            data-bs-interval="3000"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="wa003.jpg" class="d-block w-100" alt="Image 1" />
-              </div>
-              <div class="carousel-item">
-                <img src="wa008.jpg" class="d-block w-100" alt="Image 2" />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="wa009.jpg"
-                  class="d-block w-100"
-                  alt="Image 3"
-                />
-              </div>
-            </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleFade"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleFade"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+      <section
+        class="p-5 text-center container"
+        style="margin: 50px; min-width: 700px;"
+      >
+        <div class="container;">
+          <div>
+            <h1 class="Wrapper" style="padding-bottom: 24px">
+              Learn to drive with the best
+            </h1>
           </div>
+          <img
+            src="media/python-cropped.jpg"
+            alt="student car"
+            class="img-fluid"
+            style="padding-bottom: 24px"
+          />
+          <p class="text-start" style="font-size: large; max-width: 1000px; margin-left: 150px; margin-right: 150px;">
+            Welcome to Raza Driving School, your premier destination for
+            top-notch driving education. Whether you're a beginner eager to get
+            behind the wheel or an experienced driver looking to refine your
+            skills, our expert instructors and comprehensive programs are
+            tailored to meet your needs. At Raza Driving School, we pride
+            ourselves on creating a safe, engaging, and effective learning
+            environment that prepares you for the road ahead. Join us to start
+            your journey towards becoming a confident, responsible, and skilled
+            driver. Let’s drive towards success together!
+          </p>
         </div>
+        <div>
+        </section>
+          <section>
+          <h1>our packages</h1>
+        </div>
+        <div class="container">
+          <div class="side left-side">
+            <div class="card mb-3">
+              <div class="row g-0">
+                  <div class="col-md-4">
+                      <img src="image/arrow1.jpg" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title">Beginner's Package</h5>
+                          <p class="card-text"><ul>
+                              <li>1 Lesson</li>
+                              <li>5 Hours Class</li>
+                              <li>Car for Road Test</li>
+                              <li>Free Appointment</li>
+                          </ul></p>
+                          <p class="card-text"><small class="text-body-secondary">$220.00</small></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="image/arrow2.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Beginner's Package</h5>
+                        <p class="card-text"><ul>
+                            <li>1 Lesson</li>
+                            <li>5 Hours Class</li>
+                            <li>Car for Road Test</li>
+                            <li>Free Appointment</li>
+                        </ul></p>
+                        <p class="card-text"><small class="text-body-secondary">$220.00</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3">
+          <div class="row g-0">
+              <div class="col-md-4">
+                  <img src="image/arrow3.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                  <div class="card-body">
+                      <h5 class="card-title">Beginner's Package</h5>
+                      <p class="card-text"><ul>
+                          <li>1 Lesson</li>
+                          <li>5 Hours Class</li>
+                          <li>Car for Road Test</li>
+                          <li>Free Appointment</li>
+                      </ul></p>
+                      <p class="card-text"><small class="text-body-secondary">$220.00</small></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+        
+      </div>
+      <div class="side right-side">
+        <div class="card mb-3">
+          <div class="row g-0">
+              <div class="col-md-4">
+                  <img src="image/arrow4.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                  <div class="card-body">
+                      <h5 class="card-title">Beginner's Package</h5>
+                      <p class="card-text"><ul>
+                          <li>1 Lesson</li>
+                          <li>5 Hours Class</li>
+                          <li>Car for Road Test</li>
+                          <li>Free Appointment</li>
+                      </ul></p>
+                      <p class="card-text"><small class="text-body-secondary">$220.00</small></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card mb-3">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="image/arrow5.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Beginner's Package</h5>
+                    <p class="card-text"><ul>
+                        <li>1 Lesson</li>
+                        <li>5 Hours Class</li>
+                        <li>Car for Road Test</li>
+                        <li>Free Appointment</li>
+                    </ul></p>
+                    <p class="card-text"><small class="text-body-secondary">$220.00</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="row g-0">
+          <div class="col-md-4">
+              <img src="image/arrow6.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+              <div class="card-body">
+                  <h5 class="card-title">Beginner's Package</h5>
+                  <p class="card-text"><ul>
+                      <li>1 Lesson</li>
+                      <li>5 Hours Class</li>
+                      <li>Car for Road Test</li>
+                      <li>Free Appointment</li>
+                  </ul></p>
+                  <p class="card-text"><small class="text-body-secondary">$220.00</small></p>
+              </div>
+          </div>
+      </div>
+  </div>
+    
+  </div>
+      </div>
+      
       </section>
     </div>
     <!-- End of main container -->
